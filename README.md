@@ -10,24 +10,22 @@ RETRY_TIME_OUT_SECOND -	Number of seconds init container will pause between each
 
 
 ## Example usage:
-spec:
-containers:
-...
 ```
-serviceAccountName: {{ .Values.serviceAccount }} #optional
-initContainers:
-- name: pod-dependency
-  image: {{ .Values.pod-dependency-init-container.image }}
-  env:
-  - name: POD_LABELS
-    value: "usermanagement"
-  - name: MAX_RETRY
-    value: "10"
-  - name: RETRY_TIME_OUT_SECOND
-    value: "60"
-  - name: NAMESPACE
-    value: {{ .Values.Release.Namespace }}
-     
+  spec:
+    serviceAccountName: {{ .Values.serviceAccount }} #optional
+    initContainers:
+    - name: pod-dependency
+      image: {{ .Values.pod-dependency-init-container.image }}
+      env:
+      - name: POD_LABELS
+        value: "usermanagement"
+      - name: MAX_RETRY
+        value: "10"
+      - name: RETRY_TIME_OUT_SECOND
+        value: "60"
+      - name: NAMESPACE
+        value: {{ .Values.Release.Namespace }}
+         
 ```
 ___
 ## RBAC
