@@ -1,5 +1,5 @@
-Pod dependency Services
-This container can be used as init container to specify dependency of other pod. It will check for exiting pod with success status. If any pod with given label selector is found running in current namespace it will exit with success else exit with failure after timeout.
+## Pod dependency services
+This container can be used as an init container to specify the dependencies of other pods. It will check for an existing pod with a success status. If any pod with the given label selector is found running in the current namespace, it will exit with success. If no such pod is found within the specified timeout, it will exit with failure.
 
 ## Environment Variable:
 POD_LABELS - This is comma (,) separated string of labels of dependency pods which will be checked for Running phase.
