@@ -105,7 +105,7 @@ spec:
   serviceAccountName: {{ .Values.serviceAccount }}
   initContainers:
     - name: pod-dependency
-      image: docker-sandbox.infra.cloudera.com/manish.paneri/pod-dependency-init-container:v11
+      image: {{ .Values.pod-dependency-init-container.image }}
       env:
         - name: POD_LABELS
           value: "usermanagement,enviromentservice"
